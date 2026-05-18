@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #03020a;
+    color: rgba(240, 240, 255, 0.9);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::selection {
+    background: rgba(168, 200, 255, 0.24);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(168, 200, 255, 0.15);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 200, 255, 0.3);
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type='datetime-local']::-webkit-calendar-picker-indicator {
+    filter: invert(0.4) sepia(1) saturate(2) hue-rotate(180deg);
+    opacity: 0.4;
+  }
+}
+
+@layer utilities {
+  .xl\:w-88 {
+    width: 22rem;
+  }
+
+  .sky-shell {
+    position: relative;
+    background:
+      radial-gradient(circle at 52% 8%, rgba(255, 215, 122, 0.08), transparent 26rem),
+      radial-gradient(circle at 85% 28%, rgba(8, 145, 178, 0.08), transparent 24rem),
+      radial-gradient(circle at 20% 80%, rgba(192, 38, 211, 0.08), transparent 26rem),
+      linear-gradient(180deg, #060512 0%, #03020a 56%, #020106 100%);
+  }
+
+  .sky-shell::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.38;
+    background-image:
+      radial-gradient(circle, rgba(240, 240, 255, 0.36) 0 1px, transparent 1.4px),
+      radial-gradient(circle, rgba(168, 200, 255, 0.24) 0 1px, transparent 1.2px);
+    background-size: 137px 137px, 211px 211px;
+    background-position: 12px 18px, 79px 63px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .glass-panel {
+    background: linear-gradient(180deg, rgba(7, 5, 20, 0.72), rgba(7, 5, 20, 0.42));
+    backdrop-filter: blur(18px);
+  }
+}
